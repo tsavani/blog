@@ -1,0 +1,61 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  
+
+  <div><%= f.label :first_name %>
+  <%= f.email_field :first_name, :autofocus => true %></div>
+
+  <div><%= f.label :last_name %>
+  <%= f.email_field :last_name, :autofocus => true %></div>
+
+  <div><%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %>
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.label :date_of_birth %>
+  <%= f.date_select :date_of_birth, :start_year => 1980, :end_year => 2013  %></div>
+
+  <div>
+  	<%= f.label :gender %>
+ 	<%= f.radio_button :gender, 'male', :checked => true %> Male
+ 	<%= f.radio_button :gender, 'female' %> Female  
+ </div>
+ 
+<br/>
+  <div>
+  	<%= f.label :address %>
+ 	<%= f.text_area :address %> 
+  </div>
+
+  <div>
+  	<%= f.label :role %>
+ 	<%= f.radio_button :role, 'admin', :checked => true %> admin
+ 	<%= f.radio_button :role, 'user' %> user  
+ </div>
+ 
+  
+ <br /> 
+  <div>
+  	<%= f.label :hobbies %>
+ 	<%= f.check_box :hobbies, {:multiple => "true"}, "movie", nil %> Movie
+ 	<%= f.check_box :hobbies, {:multiple => "true"}, "dancing", nil %> Dancing
+ 	<%= f.check_box :hobbies, {:multiple => "true"}, "singing", nil %> Singing
+ 	<%= f.check_box :hobbies, {:multiple => "true"}, "reading", nil %> Reading 
+ </div>
+  
+<br /> <br / >
+  <div>
+  	<%= f.submit "Sign up" %>
+  </div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
