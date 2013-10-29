@@ -1,0 +1,34 @@
+<%= form_for(@post_master) do |f| %>
+  <% if @post_master.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post_master.errors.count, "error") %> prohibited this post_master from being saved:</h2>
+
+      <ul>
+      <% @post_master.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label :post_name %><br>
+    <%= f.text_field :post_name %>
+  </div>
+  <div class="field">
+    <%= f.label :discription %><br>
+    <%= f.text_area :discription %>
+  </div>
+  
+ <%= session[:blog_id] %> 
+ 
+  <div class="field">
+      <%= f.hidden_field :blog_master_id, :value => session[:blog_id] %>
+     
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,11 +1,13 @@
 Blog::Application.routes.draw do
 
 
+  resources :post_masters
+
+  resources :blog_masters
+
+
   devise_for :users
  
-
- 
-  resources :blogs
 
   root  'static_pages#home'
   
@@ -14,10 +16,18 @@ Blog::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
 
-   match '/newblog', to: 'blogs#new', via: 'get'
-    get "blogs/new"
-  get "blogs/show"
-  get "blogs/destroy"
+   match '/newblog', to: 'blogs#new',            via: 'get'
+
+   match '/new',     to: 'blog_masters#new',     via: 'get'
+   match '/show',    to: 'blog_masters#show',    via: 'get'
+   match '/destroy', to: 'blog_masters#destroy', via: 'get'
+ 
+
+   
+
+  
+
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
    

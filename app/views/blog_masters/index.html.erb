@@ -1,0 +1,23 @@
+
+<h1>Welcome <%= current_user.first_name %></h1>
+<h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
+<% @blog_masters.each do |blog_master| %>
+<table class="table table-striped">
+  <tr>
+    <td colspan=3><h3><%= blog_master.blog_name %></h3></td>
+  </tr>
+  <tr>
+    <td colspan=3><%= blog_master.discription %></td>
+  </tr>
+  <tr>
+    <td>
+    <%= link_to 'Show', blog_master,  class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_blog_master_path(blog_master),  class: "btn btn-primary"  %>
+    <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
+  </td>
+  </tr>
+</table>
+<br />
+<% end %>
+
+

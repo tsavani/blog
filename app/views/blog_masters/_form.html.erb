@@ -1,0 +1,28 @@
+<%= form_for(@blog_master) do |f| %>
+  <% if @blog_master.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog_master.errors.count, "error") %> prohibited this blog_master from being saved:</h2>
+
+      <ul>
+      <% @blog_master.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :blog_name %><br>
+    <%= f.text_field :blog_name %>
+  </div>
+  <div class="field">
+    <%= f.label :discription %><br>
+    <%= f.text_field :discription %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

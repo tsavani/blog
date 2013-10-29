@@ -1,9 +1,38 @@
-<div class="center hero-unit">
+
+  
+  <% if user_signed_in? %>
+
+     <h1><%= current_user.first_name %> 's blog</h1>
+     Name: <%= current_user.first_name %> <br />
+     Last Name: <%= current_user.last_name %> <br />
+     Emai :<%= current_user.email %> <br />
+     Date of Birth: <%= current_user.date_of_birth %> <br />
+     Address: <%= current_user.address %> <br />
+     Gender: <%= current_user.gender %> <br />
+     Hobbies: <%= current_user.hobbies %> <br />
+     Role: <%= current_user.role %> <br />
+
+
+
+
+
+
+  <% else %>
+
+
+
+
+
+ <div class="center hero-unit">
+
   <h1>Welcome to the User Blog</h1>
 
   <h2>
     This is the home page for the blog application.
   </h2>
+
+  <% end %>
+
 
   </div>
 

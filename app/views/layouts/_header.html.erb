@@ -6,11 +6,11 @@
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
-           <% if signed_in? %>
+           <% if user_signed_in? %>
                   <li><%= link_to "Profile", '#' %></li>
-                  <li><%= link_to "Create New Blog", newblog_path %></li>
-                  <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-                  <li><h4>Welcome <%= @user.first_name %></h4></li> 
+                  <li><%= link_to "Create New Blog", blog_masters_path %></li>
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                
             <% else %>
           <li><%= link_to "Signin", new_user_session_path %></li> 
            <li><%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %> <li>
@@ -20,3 +20,5 @@
     </div>
   </div>
 </header> 
+
+

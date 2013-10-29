@@ -1,0 +1,2 @@
+module BlogMastersHelper
+end

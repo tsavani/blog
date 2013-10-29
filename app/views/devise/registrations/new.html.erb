@@ -24,7 +24,7 @@
   <%= f.date_select :date_of_birth, :start_year => 1980, :end_year => 2013  %></div>
 
   <div>
-  	<%= f.label :gender %>
+  <%= f.label :gender %>
  	<%= f.radio_button :gender, 'male', :checked => true %> Male
  	<%= f.radio_button :gender, 'female' %> Female  
  </div>
@@ -32,23 +32,23 @@
 <br/>
   <div>
   	<%= f.label :address %>
- 	<%= f.text_area :address %> 
+ 	  <%= f.text_area :address %> 
   </div>
 
   <div>
   	<%= f.label :role %>
- 	<%= f.radio_button :role, 'admin', :checked => true %> admin
- 	<%= f.radio_button :role, 'user' %> user  
+ 	  <%= f.radio_button :role, 'admin', :checked => true %> admin
+  	<%= f.radio_button :role, 'user' %> user  
  </div>
  
   
  <br /> 
   <div>
   	<%= f.label :hobbies %>
- 	<%= f.check_box :hobbies, {:multiple => "true"}, "movie", nil %> Movie
- 	<%= f.check_box :hobbies, {:multiple => "true"}, "dancing", nil %> Dancing
- 	<%= f.check_box :hobbies, {:multiple => "true"}, "singing", nil %> Singing
- 	<%= f.check_box :hobbies, {:multiple => "true"}, "reading", nil %> Reading 
+ 	  <%= f.check_box :hobbies, {:multiple => "true"}, "movie", nil %> Movie
+  	<%= f.check_box :hobbies, {:multiple => "true"}, "dancing", nil %> Dancing
+ 	  <%= f.check_box :hobbies, {:multiple => "true"}, "singing", nil %> Singing
+  	<%= f.check_box :hobbies, {:multiple => "true"}, "reading", nil %> Reading 
  </div>
   
 <br /> <br / >

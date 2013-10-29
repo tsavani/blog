@@ -1,0 +1,27 @@
+
+<h1><%= @blog_master.blog_name %>  </h1>
+<%= link_to 'Crate New Post', new_post_master_path, class: "btn btn-large btn-primary" %>
+<br/> <br/>
+
+<% @post_masters.each do |post_master| %>
+<table class="table table-striped">
+  <tr>
+    <td><h3><%= post_master.post_name %></h3></td>
+  </tr>
+  <tr>
+    <td><%= post_master.discription %></td>
+  </tr>
+  <tr>
+    <td>
+    <%= link_to 'Show', post_master, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_post_master_path(post_master), class: "btn btn-primary" %>
+    <%= link_to 'Destroy', post_master, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+   </td>
+  </tr>
+</table>
+<br />
+<% end %>
+
+<%= link_to 'Back', blog_masters_path, class: "btn btn-large btn-primary" %>
+
+
