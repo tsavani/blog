@@ -9,8 +9,8 @@ Blog::Application.routes.draw do
   devise_for :users
  
 
-  root  'static_pages#home'
-  
+ # root  'static_pages#home'
+  root  'blog_masters#index'
 
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
@@ -21,7 +21,8 @@ Blog::Application.routes.draw do
    match '/new',     to: 'blog_masters#new',     via: 'get'
    match '/show',    to: 'blog_masters#show',    via: 'get'
    match '/destroy', to: 'blog_masters#destroy', via: 'get'
- 
+   
+   match '/create',  to: 'post_masters#create',     via: 'get'
 
    
 

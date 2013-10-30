@@ -4,7 +4,6 @@
   <%= devise_error_messages! %>
 
   
-
   <div><%= f.label :first_name %>
   <%= f.text_field :first_name, :autofocus => true %></div>
 
@@ -53,7 +52,7 @@
   
 <br /> <br / >
   <div>
-  	<%= f.submit "Sign up" %>
+  	<%= f.submit "Sign up" ,  class: "btn btn-large btn-primary" %>
   </div>
 
 <% end %>

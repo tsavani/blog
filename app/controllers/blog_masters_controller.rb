@@ -1,5 +1,5 @@
 class BlogMastersController < ApplicationController
-  before_action :set_blog_master, only: [:show, :edit, :update, :destroy, :newpost]
+  before_action :set_blog_master, only: [:show, :edit, :update, :destroy]
 
   # GET /blog_masters
   # GET /blog_masters.json

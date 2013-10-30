@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
     	u.permit :first_name, :last_name, :address, :password, :gender, :email, :Password_confirmation, :hobbies, :role, :date_of_birth 
      end
       
-#      devise_parameter_sanitizer.for(:account_update) do |u|
-#      u.permit :name, :address, :password, :gender, :email, :Password_confirmation, :current_password
-#     end
+      devise_parameter_sanitizer.for(:account_update) do |u|
+       u.permit :first_name, :last_name, :role, :date_of_birth, :address, :password, :gender, :email, :Password_confirmation, :current_password
+     end
     
   end
 

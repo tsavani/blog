@@ -1,3 +1,5 @@
+ <% if user_signed_in? %>
+
 <h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
 <% @blog_masters.each do |blog_master| %>
 <table class="table table-striped">
@@ -18,4 +20,23 @@
 <br />
 <% end %>
 
+  <% else %>
 
+
+
+
+
+ <div class="center hero-unit">
+
+  <h1>Welcome to the User Blog</h1>
+
+  <h2>
+    This is the home page for the blog application.
+  </h2>
+
+ 
+
+
+  </div>
+
+ <% end %>

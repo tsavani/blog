@@ -10,10 +10,7 @@
   <%= @post_master.discription %>
 </p>
 
-<p>
-  <strong>Blog master:</strong>
-  <%= @post_master.blog_master_id %>
-</p>
 
-<%= link_to 'Edit', edit_post_master_path(@post_master) %> |
-<%= link_to 'Back', post_masters_path %>
+
+<%= link_to 'Edit', edit_post_master_path(@post_master) , class: "btn btn-large btn-primary" %> |
+<%= link_to 'Back', post_masters_path, class: "btn btn-large btn-primary"  %>
