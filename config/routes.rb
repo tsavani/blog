@@ -1,6 +1,10 @@
 Blog::Application.routes.draw do
 
 
+ 
+
+  resources :comments
+
   resources :post_masters
 
   resources :blog_masters
@@ -21,9 +25,9 @@ Blog::Application.routes.draw do
    match '/new',     to: 'blog_masters#new',     via: 'get'
    match '/show',    to: 'blog_masters#show',    via: 'get'
    match '/destroy', to: 'blog_masters#destroy', via: 'get'
-   
-   match '/create',  to: 'post_masters#create',     via: 'get'
-
+ #  match '/comment', to: 'post_masters#comment', via: 'get'
+ 
+  #  get 'post_masters/comment'
    
 
   

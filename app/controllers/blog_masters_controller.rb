@@ -5,7 +5,10 @@ class BlogMastersController < ApplicationController
   # GET /blog_masters.json
   def index
     session[:blog_id] = nil
+
     @blog_masters = BlogMaster.where(user_id: current_user)
+    @admin_blog = BlogMaster.find(:all)
+    @admin_user = User.where(role: 'user')
 
   end
 

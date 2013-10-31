@@ -7,20 +7,40 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
            <% if user_signed_in? %>
-                  <li><%= link_to "Profile", edit_user_registration_path %></li>
-                  <li><%= link_to "Create New Blog", new_blog_master_path %></li>
-                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-                  </ul>
-                </nav>
-                 </div>
-                 </div>
-                  <div class="page-header">
-                     <h1> 
-                       <%= link_to image_tag("blog2.JPG", alt: "Rails"), 'http://rubyonrails.org/' %>
-                       <%= current_user.first_name %> 's blog
-                     </h1>
-                  </div>
+                <li><%= link_to "Profile", edit_user_registration_path %></li>
+                <% if current_user.role == "admin" %>
+                      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                      </ul>
+                        </nav>
+                         </div>
+                         </div>
+                          <div class="page-header">
+                             <h1> 
+                            <%= link_to image_tag("blog2.JPG", alt: "Rails"), 'http://rubyonrails.org/' %>
+                            Welcome Admin:<%= current_user.first_name %>
+                             </h1>
+                          </div>
+
+                <% else %>
+                       
+                        <li><%= link_to "Create New Blog", new_blog_master_path %></li>
+                         <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                          
+                        </ul>
+                          </nav>
+                           </div>
+                           </div>
+                            <div class="page-header">
+                               <h1> 
+                                 <%= link_to image_tag("blog2.JPG", alt: "Rails"), 'http://rubyonrails.org/' %>
+                                 <%= current_user.first_name %> 's blog
+                               </h1>
+                            </div>
+                <% end %>
+                  
             <% else %>
+
+
           <li><%= link_to "Signin", new_user_session_path %></li> 
           <li><%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %> <li>
           </ul>

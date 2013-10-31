@@ -4,6 +4,7 @@ class PostMastersController < ApplicationController
   # GET /post_masters
   # GET /post_masters.json
   def index
+      session[:post_id] = nil 
       @blog_master =  BlogMaster.find(session[:blog_id])
       @post_masters = PostMaster.where(blog_master_id: session[:blog_id])
       #@post_masters = PostMaster.all
@@ -14,12 +15,20 @@ class PostMastersController < ApplicationController
   # GET /post_masters/1.json
   def show
     #@bolg_master = BlogMaster.where(blog_master_id: session[:blog_id])
+    @comment= Comment.where(post_master_id:  @post_master.id)
+
+    #@comment.each do |c|
+    #  @user = User.find(c.user_id)
+   # end
+
+    session[:post_id] = @post_master.id
   end
 
   # GET /post_masters/new
   def new
     @blog_master ||=  BlogMaster.find(session[:blog_id])
     @post_master = PostMaster.new
+
   end
 
   # GET /post_masters/1/edit
@@ -66,6 +75,8 @@ class PostMastersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,42 +1,59 @@
- <% if user_signed_in? %>
-
-<h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
-<% @blog_masters.each do |blog_master| %>
-<table class="table table-striped">
-  <tr>
-    <td colspan=3><h3><%= blog_master.blog_name %></h3></td>
-  </tr>
-  <tr>
-    <td colspan=3><%= blog_master.discription %></td>
-  </tr>
-  <tr>
-    <td>
-    <%= link_to 'Show', blog_master,  class: "btn btn-primary" %>
-    <%= link_to 'Edit', edit_blog_master_path(blog_master),  class: "btn btn-primary"  %>
-    <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
-  </td>
-  </tr>
-</table>
-<br />
-<% end %>
-
-  <% else %>
-
-
-
-
-
- <div class="center hero-unit">
-
-  <h1>Welcome to the User Blog</h1>
-
-  <h2>
-    This is the home page for the blog application.
-  </h2>
-
+<% if user_signed_in? %>
  
+      <% if current_user.role == 'admin' %>
+            <table class="table table-hover">
+              <tr>
+                <td>User Id</td>
+                <td>First name</td>
+                <td>Last name</td>
+                 <td>Email</td>
+                <td>Address</td>
+                <td>Gender</td>
+                <td>Date of Birth</td>
+             
+              </tr>
+              <% @admin_user.each do |u| %>
+              <tr>
+                <td><%= u.id %></td>
+                <td><%= u.first_name %></td>
+                <td><%= u.last_name %></td>
+                 <td><%= u.email %> </td>
+                <td><%= u.address %> </td>
+                <td><%= u.gender %> </td>
+                <td><%= u.date_of_birth %> </td>
+               
+                </td>
+              </tr>
+              <% end %>
+            </table>
+      <% else %>
 
+    <h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
+          <% @blog_masters.each do |blog_master| %>
+                  <table class="table table-striped">
+                    <tr>
+                      <td colspan=3><h3><%= blog_master.blog_name %></h3></td>
+                    </tr>
+                    <tr>
+                      <td colspan=3><%= blog_master.discription %></td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <%= link_to 'Show', blog_master,  class: "btn btn-primary" %>
+                      <%= link_to 'Edit', edit_blog_master_path(blog_master),  class: "btn btn-primary"  %>
+                      <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
+                      </td>
+                    </tr>
+                  </table>
+      
+                  <br />
+            <% end %>
+         <% end %>
+<% else %>
 
-  </div>
+    <div class="center hero-unit">
+      <h1>Welcome to the User Blog</h1>
+      <h2>This is the home page for the blog application.</h2>
+    </div>
 
- <% end %>
+<% end %>

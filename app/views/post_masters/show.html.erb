@@ -1,16 +1,61 @@
 <p id="notice"><%= notice %></p>
+<table class="table table-striped">
+  <tr>
+    <td><h3><%= @post_master.post_name %></h3></td>
+  </tr>
+  <tr>
+    <td><%= @post_master.discription %></td>
+  </tr>
+<!--  <tr>
+    <td>
+    <%= link_to 'Edit', edit_post_master_path(@post_master) , class: "btn btn-large btn-primary" %> |
+    <%= link_to 'Back', post_masters_path, class: "btn btn-large btn-primary"  %>
+   </td>
+  </tr> -->
+  </table>
 
-<p>
-  <strong>Post name:</strong>
-  <%= @post_master.post_name %>
-</p>
-
-<p>
-  <strong>Discription:</strong>
-  <%= @post_master.discription %>
-</p>
 
 
 
-<%= link_to 'Edit', edit_post_master_path(@post_master) , class: "btn btn-large btn-primary" %> |
-<%= link_to 'Back', post_masters_path, class: "btn btn-large btn-primary"  %>
+<% @comment.each do |c| %>
+  <table class="table table-condensed">
+  	<tr class="active">
+  	<%  @user = User.find(c.user_id) %>
+    <td><b>Commented by <%= @user.first_name %> : </b></td>
+  </tr>
+  <tr>
+    <td><%= c.discription %></td>
+  </tr>
+   <tr>
+    <td>
+    <%= link_to 'Edit', '#', class: "btn btn-primary" %>
+    <%= link_to 'Destroy', comment_path(c), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+   </td>
+  </tr>
+</table>
+<br />
+<% end %>
+
+ <%= form_for Comment.new do |f| %>
+ 
+ <div class="action">
+     <%= f.submit %>
+  </div>
+ 
+  <div class="field">
+   
+    <%= f.text_area :discription %>
+  </div>
+  
+  <div class="field">
+      <%= f.hidden_field :post_master_id, :value => session[:post_id] %>
+  </div>
+
+   <div class="field">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+ 
+<% end %>
+
+ <%= link_to 'Back', post_masters_path, class: "btn btn-large btn-primary"  %>
