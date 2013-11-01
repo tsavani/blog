@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :set_blog_master, only: [:destroy]
+ 
   def show
     @comment = Comment.find(params[:id])
   end
@@ -9,7 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-  		@comment = Comment.new(comment_params)
+  	@comment = Comment.new(comment_params)
   	if @comment.save
   	   flash[:success] = "Comment was created successfully!"
        redirect_to post_master_path(session[:post_id])
