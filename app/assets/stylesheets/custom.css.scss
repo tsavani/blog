@@ -63,8 +63,9 @@ textarea {
 
 .page-header{
   margin-left: 10px;
-  
+  margin-top:0px;
   background-color: #FFFFFF;
+
 }
   
 /* typography */
@@ -99,6 +100,7 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
 
 
 /* header */
@@ -199,10 +201,19 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 50%;
   margin-bottom: 15px;
   @include box_sizing;
 }
+
+select {
+  border: 1px solid #bbb;
+  width: 12%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+
 
 input {
   height: auto !important;
@@ -220,3 +231,34 @@ input {
   @extend .control-group;
   @extend .error;
 }
+
+
+
+/* Border */
+
+
+h5 {
+   margin-top: 30px;  
+   margin-bottom: 30px;
+   margin-left: 20px;
+}
+
+
+
+
+#profile{
+  border:2px solid;
+  border-radius:25px;
+  border-color: white;
+  padding: 15px 15px 15px 15px;
+  color: black;
+  box-shadow: 10px 10px 10px 10px #888888;
+  
+}
+
+
+#time{
+   float: right;
+}
+
+

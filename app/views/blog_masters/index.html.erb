@@ -1,3 +1,4 @@
+
 <% if user_signed_in? %>
  
       <% if current_user.role == 'admin' %>
@@ -27,20 +28,38 @@
               <% end %>
             </table>
       <% else %>
+                <div class="row">
+                   <div class="span8 offset0" , id="profile">
+                    <section>
+                      <h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
+                            <div id="accordion">
+                                <% @blog_masters.each do |blog_master| %>
+                                  <h3><b><%= blog_master.blog_name %></b></h3>
+                                  <div>
+                                      <p><b id="time">Created at: <%= blog_master.created_at %></b><br /><br /><%= blog_master.discription %></p>
+                                      <%= link_to 'Show', blog_master,  class: "btn btn-primary" %>
+                                      <%= link_to 'Edit', edit_blog_master_path(blog_master),  class: "btn btn-primary"  %>
+                                      <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
+                                  </div>
+                                <% end %>
+                               </div>
+                    </section>              
+                    </div>          
+                   <section>
+                   <div class="span0 offset0" , id="profile">
+                    
+                    <h3>Profile</h3>
+                      <%= link_to image_tag("user.jpg"), class: "img-polaroid" %>
+                     <div><h5>First Name: <%= current_user.first_name %></h5></div>
+                     <div><h5>Last Name: <%= current_user.last_name %></h5></div>
+                     <div><h5>Date of Birth: <%= current_user.date_of_birth %></h5></div>             
+                     <div><h5>Gender: <%= current_user.gender %></h5></div>
+                      <%= link_to "Edit...", edit_user_registration_path %>
 
-    <h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
-          <div id="accordion">
-                <% @blog_masters.each do |blog_master| %>
-                <h3><b><%= blog_master.blog_name %></b></h3>
-                <div>
-                    <p><%= blog_master.discription %></p>
-                    <%= link_to 'Show', blog_master,  class: "btn btn-primary" %>
-                    <%= link_to 'Edit', edit_blog_master_path(blog_master),  class: "btn btn-primary"  %>
-                    <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
+                    </section>
+                    </div>
                 </div>
-            <% end %>
-             </div>
-         <% end %>
+      <% end %>
 <% else %>
 
     <div class="center hero-unit">
