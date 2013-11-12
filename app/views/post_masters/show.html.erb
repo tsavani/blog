@@ -1,4 +1,5 @@
-<div id="profile">
+<div class="row">
+<div class="span12 offset2" , id="profile">
 <p id="notice"><%= notice %></p>
 <table class="table table-striped">
   <tr>
@@ -19,7 +20,7 @@
   <table class="table table-condensed">
   	<tr class="active">
   	<%  @user = User.find(c.user_id) %>
-    <td color:"black"><b>Commented by <%= @user.first_name %> : </b></td>
+    <td><b>Commented by <%= @user.first_name %> : </b></td>
   </tr>
   <tr>
     <td><%= c.discription %></td>
@@ -33,13 +34,15 @@
 </table>
 <br />
 <% end %>
-</div>
+</div></div>
 <br />
 
-<div id="profile">
+
+<div class="row">
+<div class="span12 offset2" , id="profile">
 
  <%= form_for Comment.new do |f| %>
- 
+
  <div>
      <%= f.submit "Comment" , class: "btn btn-large btn-primary"  %>
   </div>
@@ -63,3 +66,4 @@
 
  <%= link_to 'Back', post_masters_path, class: "btn btn-large btn-primary"  %>
 </div>
+</div></div>

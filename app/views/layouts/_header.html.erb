@@ -15,10 +15,12 @@
                          </div>
                          </div>
                           <div class="page-header">
+                            <div id="space">
                              <h1> 
                               <%= link_to image_tag("blog4.JPG", alt: "Rails"), 'http://rubyonrails.org/' %>
                               Welcome Admin:<%= current_user.first_name %>
                              </h1>
+                           </div>
 
                                <ul class="nav pull-right">
                                   <li><%= link_to "User's Blog", '#', class: "btn btn-large btn-primary" %></li>
@@ -31,10 +33,12 @@
                       </div>
                     </div>
                     <div class="page-header">
+                       <div id="space">
                        <h1> 
                          <%= link_to image_tag("blog4.JPG", alt: "Rails"), 'http://rubyonrails.org/' %>
                          <%= current_user.first_name %> 's blog
                        </h1>
+                     </div>
                     </div>
                 <% end %>
             <% else %>
