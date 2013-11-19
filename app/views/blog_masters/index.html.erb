@@ -35,11 +35,14 @@
                             <div id="accordion">
                                 <% @blog_masters.each do |blog_master| %>
                                   <h3><b><%= blog_master.blog_name %></b></h3>
+
                                   <div>
                                       <p><b id="time">Created at: <%= blog_master.created_at %></b><br /><br /><%= blog_master.discription %></p>
                                       <%= link_to 'Show', blog_master,  class: "btn btn-primary" %>
                                       <%= link_to 'Edit', edit_blog_master_path(blog_master),  class: "btn btn-primary"  %>
                                       <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
+                                      <b>Post:   <%= @post_count = PostMaster.count(:conditions => { 
+                                       :blog_master_id => blog_master.id  }) %></b>
                                   </div>
                                 <% end %>
                                </div>
@@ -65,11 +68,22 @@
     <div class="center hero-unit">
       <h1>Welcome to the User Blog</h1>
       <h2>This is the home page for the blog application.</h2>
+      <div id="slides">
+        <img src="http://placehold.it/940x528">
+        <img src="http://placehold.it/940x528">
+        <img src="http://placehold.it/940x528">
+        <img src="http://placehold.it/940x528">
+        <img src="http://placehold.it/940x528">
+      </div>
     </div>
 
 <% end %>
 
 
+
+
 <script>
 $( "#accordion" ).accordion();
+
 </script>
+

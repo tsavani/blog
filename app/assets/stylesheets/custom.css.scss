@@ -38,10 +38,12 @@ $grayMediumLight: #eaeaea;
 
 html {
   overflow-y: scroll;
+
 }
 
 body {
   padding-top: 165px;
+
   
 }
 
@@ -264,11 +266,34 @@ h5 {
 .page-header{
   margin-top:0px;
   background-color: #FFFFFF;
+
 }
 
 .container {
     margin-right: auto;
     margin-left: auto;
-     width: 90%;
+    width: 90%;
     padding-left: 50px;
+   float:center;
+}
+
+
+#commentUI{
+  border:2px solid;
+  border-radius:25px;
+  border-color: white;
+  padding: 30px 30px 30px 30px;
+  color: black;
+  box-shadow: 2px 2px 2px 2px #888888;
+}
+
+
+#buttonUI{
+ 
+  border:1px solid;
+  border-radius:15px;
+  border-color: white;
+  padding: 5px 5px 5px 5px;
+  color: black;
+  box-shadow: 2px 2px 2px 2px #888888;
 }

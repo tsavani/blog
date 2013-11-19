@@ -37,7 +37,7 @@
   </div>
 
   <div>
-  	<%= f.label :role %>
+  	<%= f.label :role, "Role:" %>
  	  <%= f.radio_button :role, 'admin', :checked => true %> admin
   	<%= f.radio_button :role, 'user' %> user  
  </div>
@@ -45,7 +45,7 @@
   
  <br /> 
   <div>
-  	<%= f.label :hobbies %>
+  	<%= f.label :hobbies, "Hobbies:" %>
  	  <%= f.check_box :hobbies, {:multiple => "true"}, "movie", nil %> Movie
   	<%= f.check_box :hobbies, {:multiple => "true"}, "dancing", nil %> Dancing
  	  <%= f.check_box :hobbies, {:multiple => "true"}, "singing", nil %> Singing

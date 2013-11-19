@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :blog_name %><br>
+    <%= f.label :blog_name, "Blog Name:" %><br>
     <%= f.text_field :blog_name %>
   </div>
   <div class="field">
-    <%= f.label :discription %><br>
+    <%= f.label :discription, "Discription:" %><br>
     <%= f.text_area :discription %>
   </div>
 
@@ -24,8 +24,8 @@
   <div class="field">
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="actions">
-    <%= f.submit  %>
+  <div>
+    <%= f.submit "Create/Update" , class: "btn btn-large btn-primary"  %>
   </div>
 
 <% end %>
