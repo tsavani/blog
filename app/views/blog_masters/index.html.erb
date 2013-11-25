@@ -1,6 +1,4 @@
-
-<% if user_signed_in? %>
- 
+<% if user_signed_in? %> 
       <% if current_user.role == 'admin' %>
             <table class="table table-hover">
               <tr>
@@ -11,7 +9,6 @@
                 <td>Address</td>
                 <td>Gender</td>
                 <td>Date of Birth</td>
-             
               </tr>
               <% @admin_user.each do |u| %>
               <tr>
@@ -22,22 +19,30 @@
                 <td><%= u.address %> </td>
                 <td><%= u.gender %> </td>
                 <td><%= u.date_of_birth %> </td>
-               
                 </td>
               </tr>
               <% end %>
             </table>
       <% else %>
                 <div class="row">
-                   <div class="span12 offset0" , id="profile">
+                   <div class="span3" , id="profile">
+                    <section>
+                    <h3>Blogs :</h3>
+                    <ui>
+                    <% @blog_masters.each do |blog_master| %>
+                        <h5><li><%= blog_master.blog_name %></li></h5>
+                    <% end %>
+                    </ui>
+                    </section>              
+                    </div>
+                   <div class="span8 offset0" , id="profile">
                     <section>
                       <h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
                             <div id="accordion">
                                 <% @blog_masters.each do |blog_master| %>
                                   <h3><b><%= blog_master.blog_name %></b></h3>
-
                                   <div>
-                                      <p><b id="time">Created at: <%= blog_master.created_at %></b><br /><br /><%= blog_master.discription %></p>
+                                      <p><b id="time">Created at: <%= blog_master.created_at.strftime("%d %b. %Y")  %></b><br /><br /><%= blog_master.discription %></p>
                                       <%= link_to 'Show', blog_master,  class: "btn btn-primary" %>
                                       <%= link_to 'Edit', edit_blog_master_path(blog_master),  class: "btn btn-primary"  %>
                                       <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
@@ -49,22 +54,27 @@
                     </section>              
                     </div>          
                    <section>
-                   <div class="span0 offset0" , id="profile">
-                    
-                    <h3>Profile</h3>
+                   <div class="span0 offset0" , id="profile"> 
+                    <h3>Profile:</h3>
                       <%= link_to image_tag("user.jpg"), class: "img-polaroid" %>
                      <div><h5>First Name: <%= current_user.first_name %></h5></div>
                      <div><h5>Last Name: <%= current_user.last_name %></h5></div>
-                     <div><h5>Date of Birth: <%= current_user.date_of_birth %></h5></div>             
+                     <div><h5>Date of Birth: <%= current_user.date_of_birth.strftime("%d %b %Y") %></h5></div>             
                      <div><h5>Gender: <%= current_user.gender %></h5></div>
                       <%= link_to "Edit...", edit_user_registration_path %>
-
+                      <h3>Followers: count</h3>
+                      <ui>
+                        <li><h5>User 1</h5></li>
+                        <li><h5>User 2</h5></li>
+                        <li><h5>User 3</h5></li>
+                        <li><h5>User 4</h5></li>
+                        <li><h5>User 5</h5></li>
+                      </ui>
                     </section>
                     </div>
                 </div>
       <% end %>
 <% else %>
-
     <div class="center hero-unit">
       <h1>Welcome to the User Blog</h1>
       <h2>This is the home page for the blog application.</h2>
@@ -76,8 +86,9 @@
         <img src="http://placehold.it/940x528">
       </div>
     </div>
-
 <% end %>
+
+
 
 
 

@@ -16,11 +16,15 @@
   </tr> -->
   </table>
 
+<div class="row">
+<div class="span8 offset0" , id="comment">
+
 <% @comment.each do |c| %>
   <table class="table table-condensed">
   	<tr class="active">
   	<%  @user = User.find(c.user_id) %>
-    <td><b>Commented by <%= @user.first_name %> : </b></td>
+    <td><b>Commented by <%= @user.first_name %> : <b id="time">Created at: <%= c.created_at.strftime("%d %b. %Y")  %></b>
+    </b></td>
   </tr>
   <tr>
     <td><%= c.discription %></td>
@@ -38,12 +42,10 @@
 <br />
 
 
-<div class="row">
-<div class="span12 offset2" , id="profile">
 
  <%= form_for Comment.new do |f| %>
 
- <div>
+  <div>
      <%= f.submit "Comment" , class: "btn btn-large btn-primary"  %>
   </div>
    <br />
