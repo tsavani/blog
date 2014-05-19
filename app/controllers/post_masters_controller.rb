@@ -7,8 +7,6 @@ class PostMastersController < ApplicationController
       session[:post_id] = nil 
       @blog_master =  BlogMaster.find(session[:blog_id])
       @post_masters = PostMaster.where(blog_master_id: session[:blog_id])
-      #@post_masters = PostMaster.all
-     # @blog = BlogMaster.where('id=?', params[:blog_master])
   end
 
   # GET /post_masters/1
