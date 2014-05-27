@@ -1,9 +1,12 @@
+
 class BlogMastersController < ApplicationController
   before_action :set_blog_master, only: [:show, :edit, :update, :destroy]
 
   # GET /blog_masters
   # GET /blog_masters.json
   def index
+
+    #list_of_column(blog_master)
     session[:blog_id] = nil
 
     @blog_masters = BlogMaster.where(user_id: current_user)
