@@ -1,0 +1,57 @@
+﻿
+/*
+    Aiwin Slider
+    Created By Jose Nino Garcia
+    Date 8/5/2014
+*/
+
+.aiwinSlider
+{
+    width:1003px;
+    height:247px;
+    overflow:hidden;
+    position:relative;
+}
+
+.aiwinSlider ul
+{
+    list-style:none;
+    padding:0;
+    margin:0;
+    width:10000px;
+    height:247px;
+}
+
+.aiwinSlider li
+{
+    float:left;
+}
+
+.aiwinClear
+{
+    clear:both;
+}
+
+#paging
+{
+    right:10px;
+    bottom:10px;
+}
+
+#paging div
+{
+    float:left;
+    background-image:url('circle.png');
+    height:16px;
+    width:16px;
+    cursor:pointer;
+    margin-right:2px;
+}
+
+.active
+{
+    background-image:url('circle.png') !important;
+    background-position:0px -16px !important;
+    height:16px;
+    width:16px;
+}

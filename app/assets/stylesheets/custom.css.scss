@@ -7,12 +7,16 @@ border-color: #3333FF;
 }
 
 .hero-unit{
-	
 	background-color: #FFFFFF;
+  padding:0px;
+  padding-left:12%;
 }
  
 a.btn.btn-large.btn-primary{
   color: #FFFFFF;
+  height:15px;
+  margin-bottom:10px;
+
 }
 
 a.btn.btn-primary{
@@ -21,14 +25,11 @@ a.btn.btn-primary{
 
 
 .navbar .nav > li > a {
-  
-  color: #FFFFFF;
+
 }
-  .navbar .nav > li > a:focus, .navbar .nav > li > a:hover { 
-   color: #111111;
-   
-    font-weight: bold;
-  }
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover { 
+
+}
 
 /* mixins, variables, etc. */
 
@@ -42,7 +43,7 @@ html {
 }
 
 body {
-  padding-top: 165px;
+  padding-top: 50px;
 
   
 }
@@ -57,6 +58,7 @@ textarea {
 
 .center {
   text-align: center;
+  padding-left:8%;
   h1 {
     margin-bottom: 10px;
 
@@ -272,9 +274,7 @@ h5 {
 .container {
     margin-right: auto;
     margin-left: auto;
-    width: 90%;
     padding-left: 50px;
-   float:center;
 }
 
 
