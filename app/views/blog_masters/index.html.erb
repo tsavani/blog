@@ -25,9 +25,10 @@
             </table>
       <% else %>
                 <div class="row">
-                   <div class="span3" , id="profile">
+                   <div class="span3" , id="profile" style="min-height:400px;">
                     <section>
                     <h3>Blogs :</h3>
+                    <hr>
                     <ui>
                     <% @blog_masters.each do |blog_master| %>
                         <h5><li><%= blog_master.blog_name %></li></h5>
@@ -35,9 +36,10 @@
                     </ui>
                     </section>              
                     </div>
-                   <div class="span8 offset0" , id="profile">
+                   <div class="span8 offset0" , id="profile"  style="min-height:400px;">
                     <section>
-                      <h3>My blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
+                      <h3><%= current_user.first_name %> 's blog <%= link_to 'New Blog', new_blog_master_path, class: "btn btn-large btn-primary" %></h3>
+                      <hr>
                             <div id="accordion">
                                 <% @blog_masters.each do |blog_master| %>
                                   <h3><b><%= blog_master.blog_name %></b></h3>
@@ -48,6 +50,7 @@
                                       <%= link_to 'Destroy', blog_master, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-primary"  %>
                                       <b>Post:   <%= @post_count = PostMaster.count(:conditions => { 
                                        :blog_master_id => blog_master.id  }) %></b>
+                                       <hr>
                                   </div>
                                 <% end %>
                                </div>
@@ -56,7 +59,9 @@
                    <section>
                    <div class="span0 offset0" , id="profile"> 
                     <h3>Profile:</h3>
+                    <hr>
                       <%= link_to image_tag("user.jpg"), class: "img-polaroid" %>
+                     <hr>
                      <div><h5>First Name: <%= current_user.first_name %></h5></div>
                      <div><h5>Last Name: <%= current_user.last_name %></h5></div>
                      <div><h5>Date of Birth: <%= current_user.date_of_birth.strftime("%d %b %Y") %></h5></div>             

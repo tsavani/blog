@@ -32,14 +32,6 @@
                         </nav>
                       </div>
                     </div>
-                    <div class="page-header">
-                       <div id="space">
-                       <h1> 
-                         <%= link_to image_tag("blog4.JPG", alt: "Rails"), 'http://rubyonrails.org/' %>
-                         <%= current_user.first_name %> 's blog
-                       </h1>
-                     </div>
-                    </div>
                 <% end %>
             <% else %>
           <li><%= link_to "Signin", new_user_session_path %></li> 

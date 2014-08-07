@@ -200,7 +200,7 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 50%;
+  width: 90%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -249,12 +249,15 @@ h5 {
   border:2px solid;
   border-radius:25px;
   border-color: white;
-  padding: 15px 15px 15px 15px;
+  padding: 10px 10px 10px 10px;
   color: black;
-  box-shadow: 10px 10px 10px 10px #888888;
-  
+  box-shadow: 5px 5px 5px 5px #888888;
+  margin-top:20px;
 }
 
+.row {
+    margin-left: 0px;
+}
 
 #time{
    float: right;
@@ -268,7 +271,6 @@ h5 {
 .page-header{
   margin-top:0px;
   background-color: #FFFFFF;
-
 }
 
 .container {
@@ -307,3 +309,4 @@ h5 {
   color: black;
   
 }
+

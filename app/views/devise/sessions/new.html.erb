@@ -1,14 +1,13 @@
 <div class="row">
-<div class="span8 offset3" , id="profile">
-<h1><b>Sign in</h1></b>
+<div class="span5 offset5" , id="profile">
+<h3><b>Sign in</h3></b>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %>
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password %>
   <%= f.password_field :password %></div>
-
 
   <div><% if devise_mapping.rememberable? -%>
     <%= f.check_box :remember_me, {:multiple => "true"}, :remember_me, nil %> Remember me 
