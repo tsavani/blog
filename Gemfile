@@ -47,7 +47,9 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
-gem 'sqlite3'
+	gem 'sqlite3'
+ 	gem "rspec-rails"
+    gem 'simplecov'
 end
 
 group :production do
