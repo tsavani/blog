@@ -50,6 +50,7 @@ group :development, :test do
 	gem 'sqlite3'
  	gem "rspec-rails"
     gem 'simplecov'
+    gem "letter_opener"
 end
 
 group :production do

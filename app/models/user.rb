@@ -7,4 +7,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_create  :welcome_message
+  
+
+  private
+
+  def welcome_message
+    #UserMailer.welcome_message(self).deliver
+    Rails.logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    UserNotifier.send_signup_email(self).deliver
+  end
+
 end
