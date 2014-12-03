@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 ruby '2.0.0'
@@ -46,6 +46,11 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :development do
+  gem 'newrelic_rpm'
+end
+
+
 group :development, :test do
 	gem 'sqlite3'
  	gem "rspec-rails"

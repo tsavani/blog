@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (4.0.0)
       actionpack (= 4.0.0)
@@ -68,6 +68,7 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.1)
+    newrelic_rpm (3.9.7.266)
     orm_adapter (0.5.0)
     pg (0.15.1-x86-mingw32)
     polyglot (0.3.5)
@@ -161,6 +162,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener
+  newrelic_rpm
   pg (= 0.15.1)
   rails (= 4.0.0)
   rails_12factor (= 0.0.2)
